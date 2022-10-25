@@ -1,9 +1,12 @@
 SUBDIRS = foo bar baz
 
-subdirs:
-	for dir in $(SUBDIRS); do\
-		echo $$dir; \
-	done
+# .PHONY: subdirs $(SUBDIRS)
+.PHONY: $(SUBDIRS)
+
+subdirs: $(SUBDIRS)
+
+$(SUBDIRS):
+	echo $@
 
 another:
 	echo "this is just a nice day"
