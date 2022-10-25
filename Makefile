@@ -7,3 +7,7 @@ subdirs:
 
 another:
 	echo "this is just a nice day"
+
+.PHONY: clean
+clean:
+	rm *.o temp
